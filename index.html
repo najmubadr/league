@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<meta name="theme-color" content="#006600">
+	<meta name="msapplication-navbutton-color" content="#006600">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#006600">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+	<link rel="stylesheet" href="styles/norm.css">
+
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/modal.css">
+	<title>Матч</title>
+</head>
+<body>
+<div class="wrap">
+
+	<form class="versus" id="versus" method="post">
+		<h3>⚽️&nbsp; М А Т Ч &nbsp;⚽️</h3>
+		<select name="cmd1" id="cmd-1" required><option value="">Выберите</option></select>
+		<div class="against">против</div>
+		<select name="cmd2" id="cmd-2" required><option value="">Выберите</option></select>
+		<button class="match-start"> 🔥 🔥 🔥 Начать 🔥🔥🔥 </button>
+	</form>
+	
+	<div class="stat-wrap hidden">
+		<div class="match-control">
+			<div class="btn-group">
+				<label class="second-time"><input type="checkbox" name="second-time"> 2 тайм</label>
+				<label class="pause"><input type="checkbox" name="pausa">Пауза</label>
+				<button  onClick="modalToggle()" class="btn-complete-match">Завершить матч</button>
+			</div>
+		</div>
+
+		<div class="match-log">
+			
+		</div>
+
+		<div class="stat">
+			<div class="control foul">
+				<button class="cmd-1 val">0</button>
+				<div class="control-desc foul">Фол</div>
+				<button class="cmd-2 val">0</button>
+			</div>
+			<div class="stat-result">
+				<button class="cmd-1 select-player">- - -</button>
+				<div class="score">
+					<span class="score-1 val">5</span>
+					<span class="score-sep">:</span>
+					<span class="score-2 val" >7</span>
+				</div>
+				<button class="cmd-2 select-player">- - -</button>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="results"></div>
+</div> <!-- END WRAP -->
+
+
+<div class="modal">
+	<div class="modal-top"><h3>Выберите игрока</h3></div>
+	<div class="modal-content">
+		<div class="tabs">
+			<input type="radio" name="tab" id="cmd-1-tab">
+			<label for="cmd-1-tab">cmd 1</label>
+			<input type="radio" name="tab" id="cmd-2-tab">
+			<label for="cmd-2-tab">cmd 2</label>
+			<section class="selector-cmd-1">
+				<select class="selector cmd-1"><option value="">Выберите игрока</option></select>
+			</section>
+			<section class="selector-cmd-2">
+				<select class="selector cmd-2"><option value="">Выберите игрока</option></select>
+			</section>
+		</div>
+		
+		<ul class="selected"></ul>
+	</div>
+	<div class="modal-foot">
+		<a href="#" class="btn btn-cancel">Отмена</a>
+		<a href="#" class="btn btn-primary btn-select">Выбрать</a>
+	</div>
+</div>
+	<script src="teams.js"></script>
+	<script src="common.js"></script>
+	<script src="main.js"></script>
+	<script src="modal.js"></script>
+</body>
+</html>
