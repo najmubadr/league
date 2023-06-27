@@ -12,11 +12,15 @@
 	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 	<link rel="stylesheet" href="styles/norm.css">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/modal.css">
 	<title>Матч</title>
 </head>
-<body>
+<body class="overlay">
 <div class="wrap">
 
 	<form class="versus" id="versus" method="post">
@@ -32,7 +36,7 @@
 			<div class="btn-group">
 				<label class="second-time"><input type="checkbox" name="second-time"> 2 тайм</label>
 				<label class="pause"><input type="checkbox" name="pausa">Пауза</label>
-				<button  onClick="modalToggle()" class="btn-complete-match">Завершить матч</button>
+				<button class="btn-complete-match">Завершить матч</button>
 			</div>
 		</div>
 
@@ -59,7 +63,56 @@
 
 	</div>
 	
-	<div class="results"></div>
+	<div class="results hidden">
+		<h3>Матч завершен</h3>
+		<div class="match">
+			<div class="cmd cmd-1">
+				<div class="cmd-logo"><img src="./assets/logos/ajax.svg"></div>
+				<div class="cmd-name">Аякс</div>
+			</div>
+			<div class="match-result">
+				<span class="cmd-1">12</span>
+				<span class="match-result-sep">:</span>
+				<span class="cmd-2">16</span>
+			</div>
+			<div class="cmd cmd-2">
+				<div class="cmd-logo"><img src="./assets/logos/badr.svg"></div>
+				<div class="cmd-name">Мухаджиры</div>
+			</div>
+		</div>
+
+		<h3>Статистика</h3>
+		<div class="control goal">
+			<div class="cmd-1">12</div>
+			<div class="control-desc">Голы</div>
+			<div class="cmd-2">16</div>
+		</div>
+		<div class="control-details goal">
+			<div class="cmd-1">
+				<ul></ul>
+			</div>
+			<div class="cmd-2">
+				<ul></ul>
+			</div>
+		</div>
+		
+		<div class="control foul">
+			<div class="cmd-1">0</div>
+			<div class="control-desc">Фолы</div>
+			<div class="cmd-2">0</div>
+		</div>
+		<div class="control-details foul">
+			<div class="cmd-1">
+				<ul></ul>
+			</div>
+			<div class="cmd-2">
+				<ul></ul>
+			</div>
+		</div>
+		<button class="btn new-match">Новое противостояние</button>
+
+
+	</div>
 </div> <!-- END WRAP -->
 
 
@@ -86,9 +139,9 @@
 		<a href="#" class="btn btn-primary btn-select">Выбрать</a>
 	</div>
 </div>
-	<script src="teams.js"></script>
-	<script src="common.js"></script>
-	<script src="main.js"></script>
-	<script src="modal.js"></script>
+	<script src="teams.js?v=1"></script>
+	<script src="common.js?v=1"></script>
+	<script src="main.js?v=1"></script>
+	<script src="modal.js?v=1"></script>
 </body>
 </html>

@@ -96,6 +96,7 @@ function checkCmd(){
 document.querySelectorAll('.stat .select-player')
 .forEach(el=>{
     el.addEventListener('click', e => {
+        set('fixTime', Math.round(getMatchSec()));
         modalToggle()
         if(e.currentTarget.classList.contains('cmd-1')){
             document.querySelector('.modal input#cmd-1-tab').checked = true

@@ -5,9 +5,13 @@
 	--ctl-h: 50px;
 }
 body {
-	background: darkgreen url(../assets/bg.png);
+	background: darkgreen url(../assets/bg_dark.png);
 	color: #fff;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial, sans-serif;
+}
+
+pre, code {
+	font-family:'PT Mono', monospace;
 }
 button {
 	transition: all .3s ease;
@@ -119,6 +123,10 @@ button {
 	font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", 
 	"Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
 	"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+	.action-log-icon {
+		font-size: 16px;
+	}
 }
 
 .stat {
@@ -193,4 +201,130 @@ button {
 	&-result .cmd-1 {background: rgb(254, 152, 0);}
 	&-result .cmd-2 {background: rgb(28, 130, 255);}
 
+}
+
+.results {
+	// justify-content: center;
+	
+	h3 {
+		text-align: center;
+	}
+	.control {
+		outline: none;
+		background: rgba(46, 139, 86, 0.5);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		font-size: 20px;
+		padding: 7px 70px;
+	}
+	.control-details {
+		outline: none;
+		background:url(./../assets/bg-log.png);
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 12px;
+		padding-bottom: 10px;
+		padding-top: 5px;
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			li {
+				margin-bottom: 5px;
+				padding: 5px;
+				display: flex;
+				.time {font-weight: bold;}
+				.info {
+					margin-left: 5px;
+					display: flex;
+					flex-direction: column;
+					span {margin-bottom: 5px;}
+				}
+			}
+			li:nth-child(odd){
+				background-color: rgba(0,255,0,.1);
+			}
+
+		}
+		.cmd-1 {
+			display: inline-block;
+			width: 50%;
+			position: relative;
+			
+		}
+		.cmd-1::after {
+			background: rgba(46, 139, 86, 0.5);
+			content: "";
+			display: block;
+			height: calc(100% + 15px);
+			width: 1px;
+			position: absolute;
+			top: -5px;
+			left: 100%;
+			z-index: 999;
+		}
+		.cmd-2 {
+			display: inline-block;
+			width: 50%;
+			position: relative;
+		}
+		.cmd-2::after {
+			background: rgba(46, 139, 86, 0.5);
+			content: "";
+			display: block;
+			height: calc(100% + 15px);
+			width: 1px;
+			position: absolute;
+			top: -5px;
+			left: 0%;
+			z-index: 999;
+		}
+
+	}
+	.match {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		&-result {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: -20px;
+			&-sep {
+				position: relative;
+				bottom: 2px;
+			}
+			
+		}
+
+	}
+	.cmd {
+		width: 30%;
+		text-align: center;
+		img {
+			max-width: 98px;
+		}
+		&-name {
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+	}
+	.btn.new-match {
+		width: 90%;
+		margin-left: 5%;
+		height: 50px;
+		text-transform: uppercase;
+		border: none;
+		margin-top: 80px;
+		background: darkgreen;
+		letter-spacing: .5px;
+		font-weight: 500;
+		font-size: 14px;
+		color: white;
+		border-radius: 50px;
+	}
+	
 }

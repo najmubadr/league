@@ -1,6 +1,7 @@
 let teams = [
     {
         title: "Арсенал",
+        logo: "./assets/logos/arsenal.svg",
         players: [
         "Яхьяев Ахмад",
         "Арабиев Абдул",
@@ -22,6 +23,7 @@ let teams = [
     },
     {
         title: "Интер",
+        logo: "./assets/logos/inter.svg",
         players: [
         "Ахмедов Гусейн",
         "Кандалаев Мурад",
@@ -39,6 +41,7 @@ let teams = [
     },
     {
         title: "Манчар",
+        logo: "./assets/logos/manchar.svg",
         players: [
         "Яхья Ахмедов",
         "Абдулкасым Яхьяев",
@@ -56,6 +59,7 @@ let teams = [
     },
     {
         title: "Бештирмен",
+        logo: "./assets/logos/beshtirmen.svg",
         players: [
         "Гаджиев Сайпулла",
         "Умаров Рустам",
@@ -74,6 +78,7 @@ let teams = [
     },
     {
         title: "Наполи",
+        logo: "./assets/logos/napoli.svg",
         players: [
         "Ахмедов Вали",
         "Орусханов Микаил",
@@ -88,6 +93,7 @@ let teams = [
     },
     {
         title: "Всадники",
+        logo: "./assets/logos/baqaul.svg",
         players: [
         "Карачаев Али",
         "Арсланукаев Магомедсаид",
@@ -104,6 +110,7 @@ let teams = [
     },
     {
         title: "Мухаджиры",
+        logo: "./assets/logos/arsenal.svg",
         players: [
         "Уцумуев Дадаш",
         "Алханов Ханарслан",
@@ -120,6 +127,7 @@ let teams = [
     },
     {
         title: "Бадр",
+        logo: "./assets/logos/badr.svg",
         players: [
         "Османов Загир",
         "Адильгереев Мурад",
@@ -135,6 +143,7 @@ let teams = [
     },
     {
         title: "Львы",
+        logo: "./assets/logos/leons.svg",
         players: [
         "Саликов Имам",
         "Камаев Алавутдин",
@@ -153,6 +162,7 @@ let teams = [
     },
     {
         title: "Гюнтиймес",
+        logo: "./assets/logos/guntiymes.svg",
         players: [
         "Юсупов Джанбулат",
         "Керимов Камал",
@@ -169,6 +179,7 @@ let teams = [
     },
     {
         title: "Шум",
+        logo: "./assets/logos/shum.svg",
         players: [
         "Абдуллаев Салим",
         "Мутаев Пайзула",
@@ -184,6 +195,7 @@ let teams = [
     },
     {
         title: "Чагъары",
+        logo: "./assets/logos/chagar.svg",
         players: [
         "Атаев Муслим",
         "Болатукаев Дадашка",
@@ -201,6 +213,7 @@ let teams = [
     },
     {
         title: "Шаухалы",
+        logo: "./assets/logos/shawhals.svg",
         players: [
         "Абдуллатипов Осман",
         "Агалаев Абубакар",
@@ -216,6 +229,7 @@ let teams = [
     },
     {
         title: "Иссисув Сити",
+        logo: "./assets/logos/issicity.svg",
         players: [
         "Хункеров Ислам",
         "Хункеров Хабиб",
@@ -231,6 +245,7 @@ let teams = [
     },
     {
         title: "Палестина",
+        logo: "./assets/logos/palestine.svg",
         players: [
         "Атаев Арсланхан Рашидханович",
         "Шакиров Жавлан",
@@ -247,6 +262,7 @@ let teams = [
     },
     {
         title: "Сабр",
+        logo: "./assets/logos/sabr.svg",
         players: [
         "Амиров Алавутдин",
         "Амиров Абдурагим",
@@ -266,6 +282,7 @@ let teams = [
     },
     {
         title: "Уьч булакъ",
+        logo: "./assets/logos/uchbulaq.svg",
         players: [
         "ТаймазовТаймаз",
         "Абдулабазов Адильхан",
@@ -284,6 +301,7 @@ let teams = [
     },
     {
         title: "Аякс",
+        logo: "./assets/logos/ajax.svg",
         players: [
         "Закарьяев Идрис",
         "Закарьяев Ислам",
