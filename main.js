@@ -96,7 +96,6 @@ $('.btn-select').addEventListener('click', e=>{
     forms.forEach(form => {
         if(form.checkValidity()) {
             addAction(getMatchTime(), Object.fromEntries(new FormData(form)))
-            logF(getMatchTime(), Object.fromEntries(new FormData(form)))
             form.parentElement.remove();
         } else {
             form.querySelector('.submit-form').click(); 
@@ -112,32 +111,50 @@ $('.btn-select').addEventListener('click', e=>{
 
 
 function addAction(time, data){
-    console.log(data)
-    switch (data.action) {
-        case 'red':
-            this['cmd'+data.cmd].card.push({time: time, color: data.action, player: data.player })
-            break;
-        case 'yellow':
-            this['cmd'+data.cmd].card.push({time: time, color: data.action, player: data.player })
-            break;
-
-        case 'goal':
-            this['cmd'+data.cmd].goal.push({time: time, player: data.player })
-            break;
-        case 'assist':
-            this['cmd'+data.cmd].goal[this['cmd'+data.cmd].goal.length - 1].assist = data.player;
-            break;
-        case 'auto':
-            if(parseInt(data.cmd) == 1) {
+    if(parseInt(data.cmd) == 1) {
+        switch (data.action) {
+            case 'red':
+                cmd1.card.push({time: time, color: data.action, player: data.player })
+                break;
+            case 'yellow':
+                cmd1.card.push({time: time, color: data.action, player: data.player })
+                break;
+            case 'goal':
+                cmd1.goal.push({time: time, player: data.player })
+                break;
+            case 'assist':
+                cmd1.goal[this['cmd'+data.cmd].goal.length - 1].assist = data.player;
+                break;
+            case 'auto':
                 cmd2.goal.push({time: time, player: data.player, auto: true})
-            } else {
+                break;
+        }
+        set('cmd1', cmd1, true);
+    } else {
+        switch (data.action) {
+            case 'red':
+                cmd2.card.push({time: time, color: data.action, player: data.player })
+                break;
+            case 'yellow':
+                cmd2.card.push({time: time, color: data.action, player: data.player })
+                break;
+            case 'goal':
+                cmd2.goal.push({time: time, player: data.player })
+                break;
+            case 'assist':
+                cmd2.goal[this['cmd'+data.cmd].goal.length - 1].assist = data.player;
+                break;
+            case 'auto':
                 cmd1.goal.push({time: time, player: data.player, auto: true})
-            }
-            break;
-        
+                break;
+        }
+        set('cmd2', cmd2, true);
     }
-    saveData();
+    
+    
+    logF(getMatchTime(), data)
 }
+
 function logF(time, data){
 
     log.push({time: time, action: data.action, player: data.player})
@@ -160,14 +177,14 @@ function logF(time, data){
             matchLog.append(createElement('pre', `${time} <span class='action-log-icon'>🗿</span> ${data.player}`))
             break;
     }
-    saveData();
+    
+    $('.match-log').scrollTop = $('.match-log').scrollHeight;
+    set('log', log, true);
 }
 
-function saveData() {
-    $('.match-log').scrollTop = $('.match-log').scrollHeight;
+function saveData() {    
     set('cmd1', cmd1, true);
     set('cmd2', cmd2, true);
-    set('log', log, true);
 }
 
 function bindData(){
@@ -262,6 +279,8 @@ document.querySelectorAll('.foul button').forEach(el=>{
 })
 
 $(".btn-complete-match")?.addEventListener("click", e=>{
+    cmd1 = get("cmd1", true),
+    cmd2 = get("cmd2", true);
     if(confirm("Вы уверены что хотите завершить матч?")){
         $(".stat-wrap").classList.add("hidden")
         $(".results").classList.remove("hidden")
@@ -292,7 +311,7 @@ $(".btn-complete-match")?.addEventListener("click", e=>{
         cmd1.card.forEach(card=>{cmd1Cards.append(renderCard(card))})
         cmd2.card.forEach(card=>{cmd2Cards.append(renderCard(card))})
         
-        $$(".results .control, .results .control-details").forEach(el=>el.setAttribute("contenteditable",true))
+        $$(".results .control-details").forEach(el=>el.setAttribute("contenteditable",true))
         
     }
 })
