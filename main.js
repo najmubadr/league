@@ -89,6 +89,7 @@ document.querySelector('.pause input')
 
 
 $('.btn-select').addEventListener('click', e=>{
+    
     var selected = $('.modal-content .selected');
     var forms = $$('.modal-content .selected form');
     var action = {}
@@ -282,6 +283,7 @@ $(".btn-complete-match")?.addEventListener("click", e=>{
     cmd1 = get("cmd1", true),
     cmd2 = get("cmd2", true);
     if(confirm("Вы уверены что хотите завершить матч?")){
+        document.body.classList.add("overlay")
         $(".stat-wrap").classList.add("hidden")
         $(".results").classList.remove("hidden")
 
